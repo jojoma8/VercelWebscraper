@@ -9,8 +9,8 @@ def read(url):
         base_url = f"https://www.economist.com/{url}"
         r = requests.get(
             # 'https://www.economist.com/leaders/2021/03/31/how-europe-has-mishandled-the-pandemic')
-            'https://www.economist.com/leaders/for-all-americas-success-in-helping-ukraine-hard-times-lie-ahead/21808338')
-        # base_url)
+            # 'https://www.economist.com/leaders/for-all-americas-success-in-helping-ukraine-hard-times-lie-ahead/21808338')
+            base_url)
         s = bs(r.text, "html.parser")
         p = [x.get_text() for x in s.find_all(class_="article__body-text")]
         data = {}
@@ -21,4 +21,4 @@ def read(url):
         return {"status": False, "error": e}
 
 
-read('text')
+read('leaders/for-all-americas-success-in-helping-ukraine-hard-times-lie-ahead/21808338')
