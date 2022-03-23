@@ -8,7 +8,7 @@ app.url_map.strict_slashes = False
 
 @app.route("/")
 def home():
-    return "API is working fine 2"
+    return "API is working fine 3"
 
 
 @app.route("/<query>")
