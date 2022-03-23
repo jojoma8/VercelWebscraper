@@ -18,7 +18,7 @@ def home():
 
 @app.route("/<query>")
 def read_(query):
-    return jsonify(tg.read(query))
+    return jsonify(econ.read(query))
 
 
 if __name__ == "__main__":

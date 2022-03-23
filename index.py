@@ -1,5 +1,7 @@
 from flask import Flask, jsonify
 import tg
+import econ
+
 # import requests
 
 app = Flask(__name__)
@@ -11,9 +13,13 @@ def home():
     return "API is working fine 444"
 
 
+# @app.route("/<query>")
+# def telegram_(query):
+#     return jsonify(tg.telegram(query))
+
 @app.route("/<query>")
-def telegram_(query):
-    return jsonify(tg.telegram(query))
+def read_(query):
+    return jsonify(econ.telegram(query))
 
 
 if __name__ == "__main__":
