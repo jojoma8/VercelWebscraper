@@ -6,9 +6,10 @@ import re
 
 def read(url):
     try:
+        base_url = f"{url}"
         r = requests.get(
             # 'https://www.economist.com/leaders/2021/03/31/how-europe-has-mishandled-the-pandemic')
-            url)
+            base_url)
         s = bs(r.text, "html.parser")
         p = [x.get_text() for x in s.find_all(class_="article__body-text")]
         data = {}
