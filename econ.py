@@ -6,7 +6,7 @@ import re
 
 def read(url):
     try:
-        base_url = f"{url}"
+        base_url = f"https://www.economist.com/{url}"
         r = requests.get(
             # 'https://www.economist.com/leaders/2021/03/31/how-europe-has-mishandled-the-pandemic')
             base_url)
