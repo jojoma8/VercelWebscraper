@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 # from flask_cors import CORS
+from flask_cors import cross_origin
 import tg
 import econ
 
@@ -11,6 +12,7 @@ app.url_map.strict_slashes = False
 
 
 @app.route("/")
+@cross_origin()
 def home():
     return "API is working fine 444 !"
 
