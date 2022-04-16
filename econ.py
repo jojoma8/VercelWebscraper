@@ -19,7 +19,7 @@ def read(url):
         data = {}
         data['content'] = p
         data['article_headline'] = article_headline
-        print(p)
+        print(data)
         return data
     except Exception as e:
         return {"status": False, "error": e}
