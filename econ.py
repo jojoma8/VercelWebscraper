@@ -14,12 +14,21 @@ def read(url):
             # 'https://www.economist.com/leaders/for-all-americas-success-in-helping-ukraine-hard-times-lie-ahead/21808338')
             base_url)
         s = bs(r.text, "html.parser")
-        p = [x for x in s.find_all(class_="article__body-text")]
+        p = [x.get_text() for x in s.find_all(class_="article__body-text")]
         article_headline = [x.get_text()
                             for x in s.find_all(class_="article__headline")]
+        article_subheadline = [x.get_text()
+                               for x in s.find_all(class_="article__subheadline")]
+        article_description = [x.get_text()
+                               for x in s.find_all(class_="article__description")]
+        article_date = [x.get_text()
+                        for x in s.find_all(class_="article__dateline-datetime")]
         data = {}
         data['content'] = p
         data['article_headline'] = article_headline
+        data['article_subheadline'] = article_subheadline
+        data['article_description'] = article_description
+        data['article_date'] = article_date
         print(data)
         return data
     except Exception as e:
