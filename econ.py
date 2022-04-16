@@ -23,11 +23,14 @@ def read(url):
                                for x in s.find_all(class_="article__description")]
         # article_date = [x.get_text()
         #                 for x in s.find_all(class_="article__dateline-datetime")]
+        article_image = [s.find_all(class_="article__lead-image")
+                         [0].find_all('img')[0]['src']]
         data = {}
         data['content'] = p
         data['article_headline'] = article_headline
         data['article_subheadline'] = article_subheadline
         data['article_description'] = article_description
+        data['article_image'] = article_image
         # data['article_date'] = article_date
         print(data)
         return data
