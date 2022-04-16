@@ -32,12 +32,12 @@ def read(url):
         data['article_description'] = article_description
         data['article_image'] = article_image
         # data['article_date'] = article_date
-        data['related_article_link'] = s.find_all(
-            class_="related-article")[0].find_all(class_="headline-link")[0]['href']
-        data['related_article_text'] = s.find_all(
-            class_="related-article")[0].find_all(class_="related-article__headline")[0].get_text()
-        data['related_article_image'] = s.find_all(
-            class_="related-article")[0].find_all('img')[0]['src']
+        data['related_article_link'] = [x.find_all(class_="headline-link")[0]['href'] for x in s.find_all(
+            class_="related-article")]
+        data['related_article_text'] = [x.find_all(class_="related-article__headline")[0].get_text() for x in s.find_all(
+            class_="related-article")]
+        data['related_article_image'] = [x.find_all('img')[0]['src'] for x in s.find_all(
+            class_="related-article")]
 
         print(data)
         return data
