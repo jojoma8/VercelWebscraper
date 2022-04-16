@@ -19,15 +19,15 @@ def read(url):
                             for x in s.find_all(class_="article__headline")]
         article_subheadline = [x.get_text()
                                for x in s.find_all(class_="article__subheadline")]
-        # article_description = [x.get_text()
-        #                        for x in s.find_all(class_="article__description")]
+        article_description = [x.get_text()
+                               for x in s.find_all(class_="article__description")]
         # article_date = [x.get_text()
         #                 for x in s.find_all(class_="article__dateline-datetime")]
         data = {}
         data['content'] = p
         data['article_headline'] = article_headline
         data['article_subheadline'] = article_subheadline
-        # data['article_description'] = article_description
+        data['article_description'] = article_description
         # data['article_date'] = article_date
         print(data)
         return data
