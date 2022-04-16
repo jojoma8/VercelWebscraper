@@ -15,7 +15,8 @@ def read(url):
             base_url)
         s = bs(r.text, "html.parser")
         p = [x.get_text() for x in s.find_all(class_="article__body-text")]
-        article_headline = [s.find_all(class_="article__headline")]
+        article_headline = [x.get_text()
+                            for x in s.find_all(class_="article__headline")]
         data = {}
         data['content'] = p
         data['article_headline'] = article_headline
