@@ -14,7 +14,7 @@ def read(url):
             # 'https://www.economist.com/leaders/for-all-americas-success-in-helping-ukraine-hard-times-lie-ahead/21808338')
             base_url)
         s = bs(r.text, "html.parser")
-        p = [x.get_text() for x in s.find_all(class_="article__body-text")]
+        p = [x for x in s.find_all(class_="article__body-text")]
         article_headline = [x.get_text()
                             for x in s.find_all(class_="article__headline")]
         data = {}
