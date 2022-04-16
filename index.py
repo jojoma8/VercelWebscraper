@@ -6,7 +6,7 @@ import econ
 # import requests
 
 app = Flask(__name__)
-CORS(app)
+cors = CORS(app, resources={r'/*': {'origins': '*'}})
 app.url_map.strict_slashes = False
 
 
