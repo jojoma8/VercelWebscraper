@@ -11,7 +11,7 @@ CORS(app)
 
 @app.route("/")
 def home():
-    return "API is working fine 444"
+    return "API is working fine 444 !"
 
 
 # @app.route("/<query>")
