@@ -1,13 +1,13 @@
 from flask import Flask, jsonify
-# from flask_cors import CORS
+from flask_cors import CORS
 import tg
 import econ
 
 # import requests
 
 app = Flask(__name__)
+CORS(app)
 app.url_map.strict_slashes = False
-# CORS(app)
 
 
 @app.route("/")
