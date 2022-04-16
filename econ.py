@@ -18,7 +18,7 @@ def read(url):
         # article_headline = s.find_all(class_="article__headline")
         data = {}
         data['content'] = p
-        # data['article_headline'] = article_headline
+        data['article_headline'] = 'test'
         print(data)
         return data
     except Exception as e:
