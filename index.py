@@ -1,8 +1,8 @@
 from flask import Flask, jsonify
 # from flask_cors import CORS
-# from flask_cors import cross_origin
 import tg
 import econ
+from flask_cors import cross_origin
 
 # import requests
 
