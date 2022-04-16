@@ -35,7 +35,7 @@ def read(url):
         data['related_article_link'] = s.find_all(
             class_="related-article")[0].find_all(class_="headline-link")[0]['href']
         data['related_article_text'] = s.find_all(
-            class_="related-article")[0].find_all(class_="headline-link")[0].get_text()
+            class_="related-article")[0].find_all(class_="related-article__headline")[0].get_text()
         data['related_article_image'] = s.find_all(
             class_="related-article")[0].find_all('img')[0]['src']
 
