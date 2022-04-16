@@ -3,6 +3,8 @@ import requests
 # import pandas as pd
 import re
 
+# notes: replace / with %2f
+
 
 def read(url):
     try:
