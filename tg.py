@@ -5,7 +5,7 @@ import requests
 # print(msg)
 
 
-def telegram(username):
+def telegram(username='sprojects'):
     try:
         base_url = f"https://telegram.dog/{username}"
         r = requests.get(base_url).text
@@ -13,7 +13,7 @@ def telegram(username):
         # print(r)
         soup = bs(r, "html.parser")
         members_count = soup.find('div', class_="tgme_page_extra").text
-        print(members_count)
+        # print(members_count)
 
         data = {}
         data['content'] = members_count
