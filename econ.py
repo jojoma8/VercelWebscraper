@@ -33,7 +33,6 @@ def read(url):
         article_image = [s.find_all(class_="e3y6nua0")[
             0].find_all('img')[0]['src']][0]
         #                  [0].find_all('img')[0]['src']]
-        #  [0].find_all('img')[0]['src']]
         data = {}
         data['content'] = p
         data['article_headline'] = article_headline
@@ -43,6 +42,8 @@ def read(url):
         data['article_date'] = article_date
         # data['related_article_link'] = [x.find_all(class_="headline-link")[0]['href'] for x in s.find_all(
         #     class_="related-article")]
+        data['related_article_link'] = [
+            x.find('a')['href'] for x in s.find_all(class_="ef0oilz0")]
         # data['related_article_text'] = [x.find_all(class_="related-article__headline")[0].get_text() for x in s.find_all(
         #     class_="related-article")]
         # data['related_article_image'] = [x.find_all('img')[0]['src'] for x in s.find_all(
