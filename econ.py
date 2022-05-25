@@ -46,6 +46,8 @@ def read(url):
             x.find('a')['href'] for x in s.find_all(class_="ef0oilz0")]
         # data['related_article_text'] = [x.find_all(class_="related-article__headline")[0].get_text() for x in s.find_all(
         #     class_="related-article")]
+        data['related_article_text'] = [x.find_all(class_="ef0oilz0").get_text() for x in s.find_all(
+            class_="ef0oilz0")]
         # data['related_article_image'] = [x.find_all('img')[0]['src'] for x in s.find_all(
         #     class_="related-article")]
 
