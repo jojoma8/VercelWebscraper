@@ -20,17 +20,21 @@ def read(url):
 
         p = [[x.get_text()] for x in s.find_all(class_="article__body-text")]
         article_headline = [x.get_text()
-                            for x in s.find_all(class_="eoacr0f0")][0]
+                            # for x in s.find_all(class_="eoacr0f0")][0]
+                            for x in s.find_all(class_="e164j1a30")][0]
         # for x in s.find_all(class_="article__headline")]
         article_subheadline = [x.get_text()
-                               for x in s.find_all(class_="ecgqxun0")][0]
+                               #    for x in s.find_all(class_="ecgqxun0")][0]
+                               for x in s.find_all(class_="e1fr8l080")][0]
         #    for x in s.find_all(class_="article__subheadline")]
         # article_description = [x.get_text()
         #                        for x in s.find_all(class_="article__description")]
         article_date = [x.get_text()
-                        for x in s.find_all(class_="e11vvcj40")][0].strip()
+                        # for x in s.find_all(class_="e11vvcj40")][0].strip()
+                        for x in s.find_all(class_="e1fl1tsy0")][0].strip()
         #                 for x in s.find_all(class_="article__dateline-datetime")]
-        article_image = [s.find_all(class_="e3y6nua0")[
+        # article_image = [s.find_all(class_="e3y6nua0")[
+        article_image = [s.find_all(class_="e12yhaj20")[
             0].find_all('img')[0]['src']][0]
         #                  [0].find_all('img')[0]['src']]
         data = {}
@@ -43,15 +47,16 @@ def read(url):
         # data['related_article_link'] = [x.find_all(class_="headline-link")[0]['href'] for x in s.find_all(
         #     class_="related-article")]
         data['related_article_link'] = [
-            x.find('a')['href'] for x in s.find_all(class_="ef0oilz0")]
+            # x.find('a')['href'] for x in s.find_all(class_="ef0oilz0")]
+            x.find('a')['href'] for x in s.find_all(class_="eifj80y0")]
         # data['related_article_text'] = [x.find_all(class_="related-article__headline")[0].get_text() for x in s.find_all(
         #     class_="related-article")]
         data['related_article_text'] = [x.get_text()
-                                        for x in s.find_all(class_="ef0oilz0")]
+                                        for x in s.find_all(class_="eifj80y0")]
         # data['related_article_image'] = [x.find_all('img')[0]['src'] for x in s.find_all(
         #     class_="related-article")]
         data['related_article_image'] = [
-            x.find('a')['href'] for x in s.find_all(class_="ef0oilz0")]
+            x.find('a')['href'] for x in s.find_all(class_="eifj80y0")]
 
         print(data)
         return data
